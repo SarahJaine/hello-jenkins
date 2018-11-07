@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Health Check') {
             steps {
-                timeout(time: 10, unit: 'SECONDS') {
+                timeout(time: 1, unit: 'SECONDS') {
                     retry(5) {
                         sh './health-check.sh'
                     }
