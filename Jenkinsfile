@@ -10,5 +10,12 @@ pipeline {
                 '''
             }
         }
+        stage('Health Check') {
+            steps {
+                timeout(time: 10, unit: 'SECONDS') {
+                    sh './health-check.sh'
+                }
+            }
+        }
     }
 }
